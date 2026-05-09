@@ -137,7 +137,7 @@
             animation-play-state: paused;
         }
 
-        /* High-Quality Workshop Background Image */
+        /* High-Quality Workshop Background Image - MORE VISIBLE */
         .bg-image {
             position: fixed;
             top: 0;
@@ -145,7 +145,7 @@
             width: 100%;
             height: 100%;
             background: url('https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1920&q=80') center/cover no-repeat;
-            opacity: 0.5;
+            opacity: 0.85;
             z-index: -2;
             transform: scale(1);
             animation: slowZoom 20s ease-in-out infinite alternate;
@@ -162,14 +162,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(26, 35, 126, 0.75) 0%, rgba(40, 53, 147, 0.75) 50%, rgba(57, 73, 171, 0.75) 100%);
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.4) 0%, rgba(40, 53, 147, 0.4) 50%, rgba(57, 73, 171, 0.4) 100%);
             z-index: -1;
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(2px);
         }
 
         /* Professional Header with Glassmorphism */
         .header {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             padding: 60px 20px;
@@ -177,7 +177,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .header::before {
@@ -256,14 +256,14 @@
             line-height: 1.9;
             color: rgba(255, 255, 255, 0.95);
             animation: fadeInUp 1s ease 0.6s both;
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 40px;
             border-radius: 20px;
             border-left: 5px solid var(--gold);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .trust-message strong {
@@ -339,7 +339,7 @@
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(5px);
             position: relative;
         }
@@ -584,12 +584,12 @@
         }
 
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 25px;
             padding: 35px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
@@ -671,7 +671,7 @@
 
         .testimonial-service {
             display: inline-block;
-            background: rgba(66, 133, 244, 0.3);
+            background: rgba(66, 133, 244, 0.4);
             backdrop-filter: blur(10px);
             padding: 8px 20px;
             border-radius: 25px;
@@ -683,14 +683,14 @@
 
         /* Form Section with Glassmorphism */
         .form-section {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 30px;
             padding: 60px 40px;
             margin-bottom: 80px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .form-grid {
@@ -722,9 +722,9 @@
         .form-group input,
         .form-group select {
             padding: 18px 25px;
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             color: #fff;
             font-size: 1.05rem;
@@ -736,13 +736,13 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--gold);
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.3);
             box-shadow: 0 0 0 5px rgba(255, 167, 38, 0.3);
             transform: translateY(-2px);
         }
 
         .form-group input::placeholder {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.7);
         }
 
         .form-group select option {
@@ -779,13 +779,13 @@
 
         /* Location Section with Glassmorphism */
         .location-section {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 30px;
             padding: 60px 40px;
             margin-bottom: 60px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
@@ -816,16 +816,16 @@
             gap: 18px;
             margin-bottom: 25px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
             cursor: pointer;
         }
 
         .info-item:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             transform: translateX(8px);
             border-color: rgba(255, 167, 38, 0.4);
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -846,7 +846,7 @@
         }
 
         .info-item div p, .info-item div a {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             text-decoration: none;
             line-height: 1.7;
             transition: color 0.3s ease;
@@ -906,11 +906,11 @@
 
         /* Enhanced Footer with Glass */
         .footer {
-            background: rgba(38, 50, 56, 0.9);
+            background: rgba(38, 50, 56, 0.85);
             backdrop-filter: blur(15px);
             padding: 40px 20px;
             text-align: center;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
             position: relative;
             box-shadow: 0 -5px 30px rgba(0,0,0,0.2);
         }
@@ -954,7 +954,7 @@
         }
 
         .footer-copyright {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.7);
             font-size: 0.95rem;
         }
 
@@ -969,7 +969,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
@@ -977,7 +977,7 @@
             color: white;
             font-size: 1.4rem;
             transition: all 0.3s;
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .footer-social a:hover {
@@ -1181,7 +1181,7 @@
                 </div>
             </div>
             
-            <span class="banner-divider">❙❙❙</span>
+            <span class="banner-divider">❙❙</span>
             
             <div class="banner-item">
                 <span class="banner-icon">🚘</span>
@@ -1677,7 +1677,7 @@
             if (e.target.value.trim() !== '') {
                 e.target.style.borderColor = '#43a047';
             } else {
-                e.target.style.borderColor = 'rgba(255,255,255,0.2)';
+                e.target.style.borderColor = 'rgba(255,255,255,0.3)';
             }
         });
 
