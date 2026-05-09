@@ -156,13 +156,18 @@
             to { transform: scale(1.1); }
         }
 
+        /* Fade-out overlay - degrades to transparent */
         .bg-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(26, 35, 126, 0.25) 0%, rgba(40, 53, 147, 0.25) 50%, rgba(57, 73, 171, 0.25) 100%);
+            background: linear-gradient(180deg, 
+                rgba(26, 35, 126, 0.6) 0%, 
+                rgba(40, 53, 147, 0.4) 30%,
+                rgba(57, 73, 171, 0.2) 60%,
+                rgba(26, 35, 126, 0) 100%);
             z-index: -1;
             backdrop-filter: blur(1px);
         }
@@ -227,18 +232,18 @@
         }
 
         .header-logo {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--gold);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-            animation: logoRotate 20s linear infinite;
+            border: 5px solid var(--gold);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+            animation: logoTwoSpins 4s ease-out forwards;
         }
 
-        @keyframes logoRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes logoTwoSpins {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(720deg); }
         }
 
         .header-subtitle {
@@ -275,6 +280,104 @@
         .trust-message i {
             color: var(--success);
             margin: 0 5px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: white;
+            font-weight: 800;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .services-title::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold), var(--success));
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 35px 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            width: 100%;
+            max-width: 320px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .service-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
         }
 
         /* Status Indicator - Professional with Glass */
@@ -1045,8 +1148,8 @@
             }
 
             .header-logo {
-                width: 70px;
-                height: 70px;
+                width: 90px;
+                height: 90px;
             }
 
             .header-subtitle {
@@ -1109,9 +1212,24 @@
                 padding: 40px 15px;
             }
 
-            .section-title {
+            .section-title,
+            .services-title {
                 font-size: 2rem;
                 margin-bottom: 40px;
+            }
+
+            .services-section {
+                padding: 60px 15px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-card {
+                max-width: 100%;
+                padding: 30px 20px;
             }
 
             .testimonials-grid {
@@ -1162,8 +1280,8 @@
             }
 
             .header-logo {
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
             }
 
             .header-badge {
@@ -1171,7 +1289,8 @@
                 padding: 8px 20px;
             }
 
-            .section-title {
+            .section-title,
+            .services-title {
                 font-size: 1.7rem;
             }
 
@@ -1198,6 +1317,14 @@
             .submit-btn {
                 font-size: 1.1rem;
                 padding: 18px;
+            }
+
+            .service-icon {
+                font-size: 2.5rem;
+            }
+
+            .service-title {
+                font-size: 1.2rem;
             }
         }
 
@@ -1354,6 +1481,54 @@
             </p>
         </div>
     </header>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2 class="services-title">NUESTROS SERVICIOS</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3 class="service-title">CHAPA Y PINTURA</h3>
+                <p class="service-description">Trabajos profesionales de chapería y pintura con acabados de alta calidad y garantía.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🚗</span>
+                <h3 class="service-title">PARAGOLPES</h3>
+                <p class="service-description">Reparación y reemplazo de paragolpes con materiales de primera calidad.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3 class="service-title">BOLLOS</h3>
+                <p class="service-description">Eliminación de abolladuras sin pintar, manteniendo la originalidad de tu vehículo.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">⚠️</span>
+                <h3 class="service-title">CHOQUES Y VOLCADOS</h3>
+                <p class="service-description">Reparaciones estructurales completas con bancada y alineación profesional.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🛞</span>
+                <h3 class="service-title">REPARACIÓN DE LLANTAS</h3>
+                <p class="service-description">Enderezado y reparación de llantas de aleación y acero con tecnología de punta.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🌑</span>
+                <h3 class="service-title">POLARIZADOS</h3>
+                <p class="service-description">Instalación de polarizados de alta calidad con garantía y certificación.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🧹</span>
+                <h3 class="service-title">LIMPIEZA DE TAPIZADOS</h3>
+                <p class="service-description">Limpieza profunda de tapizados interiores, dejando tu auto como nuevo.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Circular Floating 24/7 Emergency Button -->
     <div class="floating-assistance">
@@ -1738,7 +1913,7 @@
         // Send 24/7 Assistance Message WITH EMOJIS
         function sendAssistanceMessage() {
             const text = `*🚨 SERVICIO DE AUXILIO 24HS - Centro de Reparaciones Freddy 🆘🚨*%0A%0A` +
-                        `*⚠️🚨 NECESITO AUXILIO URGENTE! 🚨⚠️*%0A%0A` +
+                        `*⚠️🚨 NECESITO AUXILIO URGENTE! 🚨️*%0A%0A` +
                         `*📍 Ubicación:* [Indicar ubicación]%0A` +
                         `*🚗 Vehículo:* [Marca y modelo]%0A` +
                         `*🔧 Problema:* [Describir el inconveniente]%0A` +
@@ -1768,7 +1943,7 @@
         }, observerOptions);
 
         // Observe all cards and sections
-        document.querySelectorAll('.testimonial-card, .form-section, .location-section').forEach(el => {
+        document.querySelectorAll('.testimonial-card, .form-section, .location-section, .service-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
