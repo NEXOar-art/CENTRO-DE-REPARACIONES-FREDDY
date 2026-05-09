@@ -902,7 +902,7 @@
             box-shadow: 0 15px 40px rgba(67, 160, 71, 0.65);
         }
 
-        /* Location Section with Glassmorphism */
+        /* Location Section with Glassmorphism - REORGANIZED */
         .location-section {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(25px);
@@ -914,10 +914,10 @@
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
-        .location-grid {
+        .location-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
+            grid-template-columns: 1fr;
+            gap: 40px;
             margin-top: 40px;
         }
 
@@ -936,33 +936,40 @@
             color: var(--gold);
         }
 
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .info-item {
             display: flex;
             align-items: flex-start;
             gap: 18px;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             transition: all 0.3s ease;
             border: 2px solid rgba(255,255,255,0.25);
             cursor: pointer;
-            justify-content: center;
-            text-align: center;
+            text-align: left;
         }
 
         .info-item:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
             border-color: rgba(255, 167, 38, 0.5);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         .info-item i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--gold);
             margin-top: 3px;
+            min-width: 30px;
         }
 
         .info-item div strong {
@@ -974,7 +981,7 @@
         }
 
         .info-item div p, .info-item div a {
-            color: rgba(255, 255, 255, 0.98);
+            color: rgba(255, 255, 255, 0.95);
             text-decoration: none;
             line-height: 1.7;
             transition: color 0.3s ease;
@@ -985,12 +992,16 @@
             color: var(--gold);
         }
 
+        .map-wrapper {
+            width: 100%;
+            margin-top: 20px;
+        }
+
         .map-container {
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            height: 100%;
-            min-height: 400px;
+            height: 450px;
             border: 3px solid rgba(255,255,255,0.4);
             position: relative;
         }
@@ -999,7 +1010,6 @@
             width: 100%;
             height: 100%;
             border: none;
-            min-height: 400px;
         }
 
         .map-link {
@@ -1252,21 +1262,12 @@
                 gap: 20px;
             }
 
-            .location-grid {
+            .info-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
 
             .map-container {
-                min-height: 300px;
-            }
-
-            .map-container iframe {
-                min-height: 300px;
-            }
-
-            .info-item {
-                padding: 15px;
+                height: 300px;
             }
 
             .footer {
@@ -1325,6 +1326,10 @@
 
             .service-title {
                 font-size: 1.2rem;
+            }
+
+            .info-item {
+                padding: 20px 15px;
             }
         }
 
@@ -1511,21 +1516,15 @@
             </div>
 
             <div class="service-card">
-                <span class="service-icon">🛞</span>
-                <h3 class="service-title">REPARACIÓN DE LLANTAS</h3>
-                <p class="service-description">Enderezado y reparación de llantas de aleación y acero con tecnología de punta.</p>
+                <span class="service-icon">💧</span>
+                <h3 class="service-title">SISTEMA PPG ENVIROBASE</h3>
+                <p class="service-description">Sistema de pintura base agua Enviromax de PPG. Acabados ecológicos, resistentes y con máximo brillo profesional.</p>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🌑</span>
                 <h3 class="service-title">POLARIZADOS</h3>
                 <p class="service-description">Instalación de polarizados de alta calidad con garantía y certificación.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🧹</span>
-                <h3 class="service-title">LIMPIEZA DE TAPIZADOS</h3>
-                <p class="service-description">Limpieza profunda de tapizados interiores, dejando tu auto como nuevo.</p>
             </div>
         </div>
     </section>
@@ -1709,9 +1708,8 @@
                             <option value="Paragolpes">🚗 Paragolpes</option>
                             <option value="Bollos (Sacabollos)">🔧 Bollos (Sacabollos)</option>
                             <option value="Choques y Volcados">⚠️ Choques y Volcados (Reparación estructural/bancada)</option>
-                            <option value="Reparación de llantas">🛞 Reparación de llantas</option>
+                            <option value="Sistema PPG Enviromax">💧 Sistema de pintura PPG Enviromax</option>
                             <option value="Polarizados">🌑 Polarizados</option>
-                            <option value="Limpieza de tapizados">🧹 Limpieza de tapizados</option>
                         </select>
                     </div>
 
@@ -1742,7 +1740,7 @@
             </form>
         </section>
 
-        <!-- Location Section -->
+        <!-- Location Section - REORGANIZED -->
         <section class="location-section">
             <h2 class="section-title">
                 <i class="fas fa-map-marker-alt"></i> ¿Dónde Estamos?
@@ -1751,78 +1749,84 @@
                 Visítanos para validación final y reparaciones especializadas
             </p>
             
-            <div class="location-grid">
+            <div class="location-content">
+                <!-- Contact Information -->
                 <div class="location-info">
                     <h3><i class="fas fa-address-card"></i> Información de Contacto</h3>
                     
-                    <!-- Clickable Location Icon -->
-                    <a href="https://maps.app.goo.gl/p2ZgDAyxmsyaT2yaA" target="_blank" style="text-decoration: none;">
+                    <div class="info-grid">
+                        <!-- Clickable Location Icon -->
+                        <a href="https://maps.app.goo.gl/p2ZgDAyxmsyaT2yaA" target="_blank" style="text-decoration: none;">
+                            <div class="info-item">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <p>km 2, Juan Domingo Perón<br>T4178 Alderetes, Tucumán</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Clickable WhatsApp Icon -->
+                        <a href="https://wa.me/543815132059" target="_blank" style="text-decoration: none;">
+                            <div class="info-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <p>+54 3815-132059</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Clickable Instagram Icon -->
+                        <a href="https://www.instagram.com/taller.freddy/" target="_blank" style="text-decoration: none;">
+                            <div class="info-item">
+                                <i class="fab fa-instagram"></i>
+                                <div>
+                                    <strong>Instagram</strong>
+                                    <p>@taller.freddy</p>
+                                </div>
+                            </div>
+                        </a>
+
                         <div class="info-item">
-                            <i class="fas fa-map-marked-alt"></i>
+                            <i class="fas fa-clock"></i>
                             <div>
-                                <strong>Dirección</strong>
-                                <p>km 2, Juan Domingo Perón<br>T4178 Alderetes, Tucumán<br><span style="color: var(--gold); font-size: 0.9rem;"><i class="fas fa-external-link-alt"></i> Ver en Google Maps</span></p>
+                                <strong>Horarios de Atención</strong>
+                                <p>
+                                    <i class="fas fa-calendar-week" style="margin-right: 5px;"></i>
+                                    Lunes a Viernes: 08:00 - 17:00<br>
+                                    <i class="fas fa-calendar-day" style="margin-right: 5px;"></i>
+                                    Sábados y Domingos: Cerrado<br>
+                                    <i class="fas fa-holiday" style="margin-right: 5px;"></i>
+                                    Feriados: Consultar por WhatsApp
+                                </p>
                             </div>
                         </div>
-                    </a>
 
-                    <!-- Clickable WhatsApp Icon -->
-                    <a href="https://wa.me/543815132059" target="_blank" style="text-decoration: none;">
                         <div class="info-item">
-                            <i class="fab fa-whatsapp"></i>
+                            <i class="fas fa-tools"></i>
                             <div>
-                                <strong>WhatsApp</strong>
-                                <p>+54 3815-132059<br><span style="color: var(--gold); font-size: 0.9rem;"><i class="fas fa-comments"></i> Enviar mensaje</span></p>
+                                <strong>Servicios</strong>
+                                <p>Chapa y pintura, reparaciones estructurales, paragolpes, sacabollos, polarizados y más.</p>
                             </div>
-                        </div>
-                    </a>
-
-                    <!-- Clickable Instagram Icon -->
-                    <a href="https://www.instagram.com/taller.freddy/" target="_blank" style="text-decoration: none;">
-                        <div class="info-item">
-                            <i class="fab fa-instagram"></i>
-                            <div>
-                                <strong>Instagram</strong>
-                                <p>@taller.freddy<br><span style="color: var(--gold); font-size: 0.9rem;"><i class="fas fa-camera"></i> Ver publicaciones</span></p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Horarios de Atención</strong>
-                            <p>
-                                <i class="fas fa-calendar-week" style="margin-right: 5px;"></i>
-                                Lunes a Viernes: 08:00 - 17:00<br>
-                                <i class="fas fa-calendar-day" style="margin-right: 5px;"></i>
-                                Sábados y Domingos: Cerrado<br>
-                                <i class="fas fa-holiday" style="margin-right: 5px;"></i>
-                                Feriados: Consultar por WhatsApp
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <i class="fas fa-tools"></i>
-                        <div>
-                            <strong>Servicios</strong>
-                            <p>Chapa y pintura, reparaciones estructurales, paragolpes, sacabollos, polarizados y más.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.1234567890123!2d-65.12345678901234!3d-26.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI0LjQiUyA2NcKwMDcnMjQuNCJX!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Ubicación Centro de Reparaciones Freddy">
-                    </iframe>
-                    <a href="https://maps.app.goo.gl/p2ZgDAyxmsyaT2yaA" target="_blank" class="map-link">
-                        <i class="fas fa-directions"></i> Cómo llegar
-                    </a>
+                <!-- Map - Separate from contact info -->
+                <div class="map-wrapper">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.1234567890123!2d-65.12345678901234!3d-26.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI0LjQiUyA2NcKwMDcnMjQuNCJX!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación Centro de Reparaciones Freddy">
+                        </iframe>
+                        <a href="https://maps.app.goo.gl/p2ZgDAyxmsyaT2yaA" target="_blank" class="map-link">
+                            <i class="fas fa-directions"></i> Cómo llegar
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1913,7 +1917,7 @@
         // Send 24/7 Assistance Message WITH EMOJIS
         function sendAssistanceMessage() {
             const text = `*🚨 SERVICIO DE AUXILIO 24HS - Centro de Reparaciones Freddy 🆘🚨*%0A%0A` +
-                        `*⚠️🚨 NECESITO AUXILIO URGENTE! 🚨️*%0A%0A` +
+                        `*⚠️ NECESITO AUXILIO URGENTE! 🚨️*%0A%0A` +
                         `*📍 Ubicación:* [Indicar ubicación]%0A` +
                         `*🚗 Vehículo:* [Marca y modelo]%0A` +
                         `*🔧 Problema:* [Describir el inconveniente]%0A` +
